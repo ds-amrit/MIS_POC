@@ -3,24 +3,21 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import altair as alt
-from src.exception import CustomException
-from src.logger import logging
-import sys
+
 
 # Display title
 st.title('MIS DASHBOARD')
 
-# Load Data
+# Path to data
 data_path = r"dashboard/finance_df.csv"
-try:
-    @st.cache_data
-    def load_data(path):
-        data = pd.read_csv(path)
-        return data
-    df = load_data(data_path)
-    logging.info('Dataset read as df')
-except Exception as e:
-    raise CustomException(e, sys)
+
+@st.cache_data
+def load_data(path):
+    data = pd.read_csv(path)
+    return data
+# Load data into df
+df = load_data(data_path)
+    
 
 st.subheader('Chief KPI: Cash and Carry Retail Stores')
 

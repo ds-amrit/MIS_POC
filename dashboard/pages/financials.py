@@ -3,21 +3,17 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from src.exception import CustomException
-from src.logger import logging
-import sys
+
 
 # Load Data
 data_path = r"dashboard/finance_df.csv"
-try:
-    @st.cache_data
-    def load_data(path):
-        data = pd.read_csv(path)
-        return data
-    df = load_data(data_path)
-    logging.info('Dataset read as df')
-except Exception as e:
-    raise CustomException(e, sys)
+
+@st.cache_data
+def load_data(path):
+    data = pd.read_csv(path)
+    return data
+
+df = load_data(data_path)
 
 # Page title
 st.header("MIS Financial Summary")
