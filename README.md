@@ -6,7 +6,9 @@
 
 Currently, the functionality of the dashboard is limited to the Financials page, which displays processed 2018 MIS data. However, in the future, we plan to incorporate additional pages to display key KPIs in other areas like Supply and Team. This expansion will provide a more comprehensive view of the organization's performance across different areas.
 
-## How to run MIS POC Dashboard
+[Link to the MIS Dashboard](https://ds-amrit-mis-poc-dashboardhome-qi5qss.streamlit.app/)
+
+## How to run MIS POC Dashboard on local machine
 
 To run the application, you need to have Python 3.8 or above installed. Follow these steps:
 
